@@ -18,180 +18,180 @@ function Cards() {
         }}
       >
         <Card className={style.card}>
-          <Card.Body className={style.body_ut}>
-            <div>
-              <div className={style.title}>
-                <a href="#" className={style.card_name}>
-                  Sennheiser HD-25
-                </a>
-              </div>
-              <div className={style.detail}>
-                <div>
-                  <a className={style.card_price}>$3000</a>
-                </div>
-              </div>
-            </div>
-            <div className={style.imgParent}>
-              <Card.Img
-                className={style.img}
-                variant="top"
-                src={cartImage}
-              />
-            </div>
-          </Card.Body>
-          <div style={{ padding: '27px', margin: '-140px 0px' }}>
-            <Card.Img
-              variant="top"
-              src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
-            />  
-          </div>
-        </Card>
-        <Card className={style.card}>
-          <Card.Body className={style.body_ut}>
-            <div>
-              <div className={style.title}>
-                <a href="#" className={style.card_name}>
-                  Sennheiser HD-25
-                </a>
-              </div>
-              <div className={style.detail}>
-                <div>
-                  <a className={style.card_price}>$3000</a>
-                </div>
-              </div>
-            </div>
-            <div className={style.imgParent}>
-              <Card.Img
-                className={style.img}
-                variant="top"
-                src={cartImage}
-              />
-            </div>
-          </Card.Body>
-          <div style={{ padding: '27px', margin: '-140px 0px' }}>
-            <Card.Img
-              variant="top"
-              src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
-            />
-          </div>
-        </Card>
-        <Card className={style.card}>
-          <Card.Body className={style.body_ut}>
-            <div>
-              <div className={style.title}>
-                <a href="#" className={style.card_name}>
-                  Sennheiser HD-25
-                </a>
-              </div>
-              <div className={style.detail}>
-                <div>
-                  <a className={style.card_price}>$3000</a>
-                </div>
-              </div>
-            </div>
-            <div className={style.imgParent}>
-              <Card.Img
-                className={style.img}
-                variant="top"
-                src={cartImage}
-              />
-            </div>
-          </Card.Body>
-          <div style={{ padding: '27px', margin: '-140px 0px' }}>
-            <Card.Img
-              variant="top"
-              src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
-            />
-          </div>
-        </Card>
-        <Card className={style.card}>
-          <Card.Body className={style.body_ut}>
-            <div>
-              <div className={style.title}>
-                <a href="#" className={style.card_name}>
-                  Sennheiser HD-25
-                </a>
-              </div>
-              <div className={style.detail}>
-                <div>
-                  <a className={style.card_price}>$3000</a>
-                </div>
-              </div>
-            </div>
-            <div className={style.imgParent}>
-              <Card.Img
-                className={style.img}
-                variant="top"
-                src={cartImage}
-              />
-            </div>
-          </Card.Body>
-          <div style={{ padding: '27px', margin: '-140px 0px' }}>
-            <Card.Img
-              variant="top"
-              src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
-            />
-          </div>
-        </Card>
-        <Card className={style.card}>
-          <Card.Body className={style.body_ut}>
-            <div>
-              <div className={style.title}>
-                <a href="#" className={style.card_name}>
-                  Sennheiser HD-25
-                </a>
-              </div>
-              <div className={style.detail}>
-                <div>
-                  <a className={style.card_price}>$3000</a>
-                </div>
-              </div>
-            </div>
-            <div className={style.imgParent}>
-              <Card.Img
-                className={style.img}
-                variant="top"
-                src={cartImage}
-              />
-            </div>
-          </Card.Body>
-          <div style={{ padding: '27px', margin: '-140px 0px' }}>
-            <Card.Img
-              variant="top"
-              src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
-            />
-          </div>
-        </Card>
-        <Card className={style.card}>
-          <Card.Body className={style.body_ut}>
-            <div>
-              <div className={style.title}>
-                <a href="#" className={style.card_name}>
-                  Sennheiser HD-25
-                </a>
-              </div>
-              <div className={style.detail}>
-                <div>
-                  <a className={style.card_price}>$3000</a>
-                </div>
-              </div>
-            </div>
-            <div className={style.imgParent}>
-              <Card.Img
-                className={style.img}
-                variant="top"
-                src={cartImage}
-              />
-            </div>
-          </Card.Body>
-          <div style={{ padding: '27px', margin: '-140px 0px' }}>
-            <Card.Img
-              variant="top"
-              src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
-            />
-          </div>
-        </Card>
-      </div>
+				<Card.Body className={style.body_ut}>
+					<div>
+						<div className={style.title}>
+							<a href="#" className={style.card_name}>
+							Sennheiser HD-25
+							</a>
+						</div>
+						<div className={style.detail}>
+							<div>
+							<a className={style.card_price}>$3000</a>
+							</div>
+						</div>
+						</div>
+						<div className={style.imgParent}>
+						<Card.Img
+							className={style.img}
+							variant="top"
+							src={cartImage}
+						/>
+					</div>
+				</Card.Body>
+				<div style={{ padding: '27px', margin: '-140px 0px' }}>
+					<Card.Img
+					variant="top"
+					src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
+					/>  
+				</div>
+				</Card>
+					<Card className={style.card}>
+					<Card.Body className={style.body_ut}>
+						<div>
+						<div className={style.title}>
+							<a href="#" className={style.card_name}>
+							Sennheiser HD-25
+							</a>
+						</div>
+						<div className={style.detail}>
+							<div>
+							<a className={style.card_price}>$3000</a>
+							</div>
+						</div>
+						</div>
+						<div className={style.imgParent}>
+						<Card.Img
+							className={style.img}
+							variant="top"
+							src={cartImage}
+						/>
+						</div>
+					</Card.Body>
+					<div style={{ padding: '27px', margin: '-140px 0px' }}>
+						<Card.Img
+						variant="top"
+						src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
+						/>
+					</div>
+				</Card>
+				<Card className={style.card}>
+				<Card.Body className={style.body_ut}>
+					<div>
+						<div className={style.title}>
+							<a href="#" className={style.card_name}>
+							Sennheiser HD-25
+							</a>
+						</div>
+						<div className={style.detail}>
+							<div>
+							<a className={style.card_price}>$3000</a>
+							</div>
+						</div>
+						</div>
+						<div className={style.imgParent}>
+						<Card.Img
+							className={style.img}
+							variant="top"
+							src={cartImage}
+						/>
+					</div>
+				</Card.Body>
+				<div style={{ padding: '27px', margin: '-140px 0px' }}>
+					<Card.Img
+					variant="top"
+					src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
+					/>
+				</div>
+				</Card>
+					<Card className={style.card}>
+					<Card.Body className={style.body_ut}>
+						<div>
+							<div className={style.title}>
+								<a href="#" className={style.card_name}>
+								Sennheiser HD-25
+								</a>
+							</div>
+							<div className={style.detail}>
+								<div>
+								<a className={style.card_price}>$3000</a>
+								</div>
+							</div>
+							</div>
+							<div className={style.imgParent}>
+							<Card.Img
+								className={style.img}
+								variant="top"
+								src={cartImage}
+							/>
+							</div>
+						</Card.Body>
+						<div style={{ padding: '27px', margin: '-140px 0px' }}>
+							<Card.Img
+							variant="top"
+							src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
+							/>
+					</div>
+				</Card>
+					<Card className={style.card}>
+					<Card.Body className={style.body_ut}>
+						<div>
+							<div className={style.title}>
+								<a href="#" className={style.card_name}>
+								Sennheiser HD-25
+								</a>
+							</div>
+							<div className={style.detail}>
+								<div>
+								<a className={style.card_price}>$3000</a>
+								</div>
+							</div>
+							</div>
+							<div className={style.imgParent}>
+							<Card.Img
+								className={style.img}
+								variant="top"
+								src={cartImage}
+							/>
+							</div>
+						</Card.Body>
+						<div style={{ padding: '27px', margin: '-140px 0px' }}>
+							<Card.Img
+							variant="top"
+							src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
+							/>
+					</div>
+				</Card>
+					<Card className={style.card}>
+					<Card.Body className={style.body_ut}>
+						<div>
+							<div className={style.title}>
+								<a href="#" className={style.card_name}>
+								Sennheiser HD-25
+								</a>
+							</div>
+							<div className={style.detail}>
+								<div>
+								<a className={style.card_price}>$3000</a>
+								</div>
+							</div>
+							</div>
+							<div className={style.imgParent}>
+							<Card.Img
+								className={style.img}
+								variant="top"
+								src={cartImage}
+							/>
+							</div>
+						</Card.Body>
+						<div style={{ padding: '27px', margin: '-140px 0px' }}>
+							<Card.Img
+							variant="top"
+							src="https://resource.logitechg.com/w_659,c_limit,f_auto,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/pro-headset/proheadset-hero.png?v=1"
+							/>
+					</div>
+				</Card>
+		</div>
     </>
   );
 }
