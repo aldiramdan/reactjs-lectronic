@@ -1,0 +1,35 @@
+.gridfooter {
+	display: grid;
+	grid-template-columns: 2fr repeat(3, 1fr);
+	padding: 10px;
+}
+
+.itemfooter {
+	border-radius: 20px;
+	padding: 20px;
+}
+
+.footer {
+	height: 400px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: cover;
+	padding: 100px;
+	text-transform: capitalize;
+}
+
+.itemfooter>h4 {
+	padding-bottom: 20px;
+}
+
+.itemfooter>ul>li {
+	list-style-type: none;
+	padding-bottom: 10px;
+}
+
+.itemfooter>p {
+	color: black;
+	font-size: 15px;
+	width: 180px;
+	padding-top: 10px;
+}
