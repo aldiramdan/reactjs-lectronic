@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Container, Button, Form } from 'react-bootstrap';
 import Navbar from '../../components/header/header';
-import Navcard from '../../components/headercard/headercard';
+import Navcard from '../../components/headerCard/headerCard';
 import Cards from '../../components/cardHome/cardHome';
 import Footer from '../../components/footer/footer'
 
