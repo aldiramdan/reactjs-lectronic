@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Container, Button, Form } from 'react-bootstrap';
 import Navbar from '../../components/header/header';
-import Navcard from '../../components/headerCard/headerCard';
+import Navcard from '../../components/headercard/headercard';
 import Cards from '../../components/cardHome/cardHome';
 import Footer from '../../components/footer/footer'
 
@@ -14,7 +14,7 @@ import img from '../../img/bg-woman.jpg';
 import style from './home.module.css';
 
 function Home() {
-
+	
 	return (
 		<>
 		<Navbar />
@@ -123,7 +123,7 @@ function Home() {
 			<Cards />
 		</Container>
 		<div>
-			<Button href="/product" className={style.button2} variant="primary">
+			<Button href="/products" className={style.button2} variant="primary">
 				View All
 			</Button>
 		</div>
