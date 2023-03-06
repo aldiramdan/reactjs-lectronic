@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navbar, Container, Nav, Button, Dropdown } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../../store/reducer/user'
 import Logo from './logoHeader.png'
 import BackLogo from './back.png'
@@ -12,6 +12,11 @@ import style from './header.module.css'
 function Header() {
 	const dispatch = useDispatch()
 	const { isAuth } = useSelector((state) => state.users)
+	const history = useNavigate()
+
+	const handleHistory = ()=>{
+		history(-1)
+	}
 
 	return (
 		<>
@@ -22,7 +27,7 @@ function Header() {
 				<Navbar.Brand href="/">
 					<img
 					width="200"
-					height="200"
+					height="auto"
 					className="d-inline-block align-top"
 					src={Logo}
 					alt="logo"
@@ -31,28 +36,28 @@ function Header() {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className={style.nav}>
-					<Link to="/" className={style.navbar2}>
-						Home
-					</Link>
-					<Link to="/products" className={style.navbar2}>
-						Products
-					</Link>
-					<Link to="#community" className={style.navbar2}>
-						Community
-					</Link>
-					<Link to="#About" className={style.navbar2}>
-						About
-					</Link>
-					<Link to="/login" className={style.navbar2}>
-						<Button className={style.button} variant="primary">
-						Login
-						</Button>
-					</Link>
-					<Link to="/register" className={style.navbar2}>
-						<Button className={style.button} variant="primary">
-						Sign Up
-						</Button>
-					</Link>
+						<Link to="/" className={style.navbar2}>
+							Home
+						</Link>
+						<Link to="/products" className={style.navbar2}>
+							Products
+						</Link>
+						<Link to="#community" className={style.navbar2}>
+							Community
+						</Link>
+						<Link to="#About" className={style.navbar2}>
+							About
+						</Link>
+						<Link to="/login" className={style.navbar2}>
+							<Button className={style.button} variant="primary">
+							Login
+							</Button>
+						</Link>
+						<Link to="/register" className={style.navbar2}>
+							<Button className={style.button} variant="primary">
+							Sign Up
+							</Button>
+						</Link>
 					</Nav>
 				</Navbar.Collapse>
 				</>
@@ -64,7 +69,7 @@ function Header() {
 			<Navbar className={style.navbar} variant="light">
 				<Container>
 				<Navbar.Brand href="/">
-					<Button className={style.but_back}>
+					<Button className={style.but_back} onClick={handleHistory}>
 					<img src={BackLogo} alt="" />
 					</Button>
 				</Navbar.Brand>

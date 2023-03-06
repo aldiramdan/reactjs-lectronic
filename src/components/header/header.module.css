@@ -22,10 +22,14 @@
 }
 
 .navbar2 {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
   margin-left: 60px;
 }
 
 .navbar3 {
+  text-decoration: none;
   height: 286px;
   background: #0020b2;
   position: absolute;
