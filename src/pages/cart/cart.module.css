@@ -1,0 +1,171 @@
+.input_search {
+    background: #ffffff;
+    box-shadow: 0px 0px 60px rgba(45, 45, 45, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.btn_search {
+    background: #0300ad;
+    border-radius: 0px 20px 20px 0px !important;
+    padding: 30px;
+    border: 0;
+}
+
+.btn_w {
+	color: #333;
+	width: 100px;
+	height: 100px;
+	padding: 30px;
+	background: #ffffff;
+	box-shadow: 0px 0px 60px rgba(45, 45, 45, 0.1);
+	border-radius: 20px;
+	border: 0;
+	margin-left: 20px;
+}
+
+.btn_w:hover {
+  	background: blue;
+}
+
+.parent {
+	margin: auto;
+	width: 64%;
+	height: 100px;
+}
+
+.cardCart {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: flex;
+}
+
+.text {
+	font-style: normal;
+	font-weight: 800;
+	font-size: 60px;
+	line-height: 140%;
+	margin: 30px 0px 20px 0;
+	letter-spacing: 0.03em;
+	color: #333333;
+}
+
+.text2 {
+	font-style: normal;
+	font-weight: 800;
+	font-size: 30px;
+	line-height: 140%;
+	margin-left: 39px;
+	letter-spacing: 0.03em;
+	color: #333333;
+}
+
+.sel {
+  	display: flex;
+}
+
+.select {
+	height: 30px;
+	width: 30px;
+	font-style: normal;
+}
+
+.card_total {
+	width: 477px;
+	height: 386px;
+	padding: 40px 40px 40px 40px;
+	margin-left: 20px;
+	background: #ffffff;
+	box-shadow: 0px 0px 60px rgba(45, 45, 45, 0.1);
+	border-radius: 20px;
+}
+
+.total {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 140%;
+	letter-spacing: 0.03em;
+	color: #333333;
+}
+
+.price {
+	display: flex;
+	justify-content: space-between;
+}
+
+.dsc {
+	display: flex;
+	justify-content: space-between;
+}
+
+.bill {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title_price {
+	font-style: normal;
+	font-size: 20px;
+	margin-top: 25px;
+	margin-left: 10px;
+}
+
+.title_dsc {
+	font-style: normal;
+	font-size: 20px;
+	margin-top: -5px;
+	margin-left: 10px;
+}
+
+.title_bill {
+	font-style: normal;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: -5px;
+	margin-left: 10px;
+}
+
+.cost_price {
+	font-style: normal;
+	font-size: 20px;
+	margin-top: 25px;
+}
+
+.cost_dsc {
+	font-style: normal;
+	font-size: 20px;
+	margin-top: -5px;
+}
+
+.cost_bill {
+	font-style: normal;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: -5px;
+}
+
+.line {
+	margin-left: 10px;
+	margin-top: -10px;
+	border: 1px solid #3d3c3c;
+}
+
+.but_checkout {
+	background: #0300ad;
+	border-radius: 10px;
+	font-style: normal;
+	font-size: 18px;
+	margin-left: 10px;
+}
+
+.content {
+	width: 64%;
+	margin: 0 auto;
+}
+
+.bs_icon {
+	width: 40px;
+	height: 40px;
+	margin: auto;
+}
