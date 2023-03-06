@@ -1,0 +1,135 @@
+@media only screen and (max-width: 1000px) {
+  .home-banner-right {
+    display: none;
+  }
+}
+
+.home-tab {
+  background-color: #0300ad;
+}
+
+.home-button {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  height: 65px;
+  width: 206px;
+  background: #0300ad;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 180px;
+}
+
+.home-title {
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 60px;
+}
+
+.home-badge {
+  color: #0020b2;
+  font-size: 18px;
+  font-weight: 600;
+  height: 52px;
+  width: 147px;
+  background: #0020b210;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+.home-card {
+  height: 431px;
+  border: 2px solid #33333320;
+  border-radius: 20px;
+  padding: 48px 33px;
+  color: #333;
+  background-color: #fff;
+  margin-bottom: 170px;
+}
+
+.home-card:hover {
+  background-color: #0020b2;
+  color: #fff;
+}
+
+.home-card:hover > .home-card-icon {
+  background-color: #fff;
+  color: #0020b2;
+}
+
+.home-card-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.home-card-desc {
+  font-size: 18px;
+  font-size: 600;
+}
+
+.home-card-icon {
+  width: 94px;
+  height: 94px;
+  background-color: #77777720;
+  border-radius: 50%;
+  margin-bottom: 36px;
+}
+
+.home-bs-icon {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+.row-badge {
+  margin-top: 160px;
+}
+
+.home-banner {
+  background-color: #0020b210;
+  padding: 124px 120px;
+}
+
+.home-banner-title {
+  font-size: 60px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.blueblue {
+  color: #0020b2;
+}
+
+.home-banner-desc {
+  font-size: 18px;
+  font-weight: 600;
+  color: #777;
+}
+
+.home-button-seller {
+  color: #0300ad;
+  border: 1px solid #0020b2;
+  font-size: 18px;
+  font-weight: 600;
+  width: 168px;
+  border-radius: 10px;
+  margin-left: 16px;
+}
+
+.home-button-shop {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  width: 168px;
+  height: 60px;
+  background: #0300ad;
+  border-radius: 10px;
+  margin-left: 16px;
+}

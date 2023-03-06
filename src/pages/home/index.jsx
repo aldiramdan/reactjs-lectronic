@@ -1,154 +1,405 @@
-import React from 'react';
-import { Card, Container, Button, Form } from 'react-bootstrap';
-import Navbar from '../../components/header/header';
-import Navcard from '../../components/headercard/headercard';
-import Cards from '../../components/cardHome/cardHome';
-import Footer from '../../components/footer/footer'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { BsSearch, BsBag, BsCashCoin, BsBox } from "react-icons/bs";
+import { logout, addUsers } from "../../store/reducer/user";
+import CardOriginal from "../../components/card/cardOriginal";
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
+import homebanner from "../../img/homebanner.png";
+import subscribe from "../../img/subscribe.png";
+import axios from "axios";
+import useApi from "../../helpers/api";
 
-import background from '../../img/bg-home.jpg';
-import logo from '../../img/logo-home.png';
-import coin from '../../img/money-home.png';
-import box from '../../img/box-home.png';
-import img from '../../img/bg-woman.jpg';
-
-import style from './home.module.css';
+import "./style.css";
 
 function Home() {
-	
+	const api = useApi();
+	const [headphone, setHeadphone] = useState([]);
+	const [airConditioner, setAirConditioner] = useState([]);
+	const [television, setTelevision] = useState([]);
+	const [router, setRouter] = useState([]);
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const { isAuth } = useSelector((state) => state.users);
+	const [searchTerm, setSearchTerm] = useState("");
+
+	const viewAll = () => {
+		navigate("/products");
+	};
+
+	const logOut = () => {
+		dispatch(logout());
+		navigate("/");
+	};
+
+	const getUser = async () => {
+		try {
+			const { data } = await api.req("/users/");
+			dispatch(addUsers(data.data));
+		} catch (error) {
+			logOut();
+		}
+	};
+
+	useEffect(() => {
+		if (isAuth) {
+		getUser();
+		}
+
+		getProducts();
+	}, []);
+
+	const getProducts = async () => {
+		try {
+			const { data: headphone } = await axios.get(
+				process.env.REACT_APP_BASE_URL + "products/"
+			);
+			const { data: airConditioner } = await axios.get(
+				process.env.REACT_APP_BASE_URL + "products/"
+			);
+			const { data: television } = await axios.get(
+				process.env.REACT_APP_BASE_URL + "products/"
+			);
+			const { data: router } = await axios.get(
+				process.env.REACT_APP_BASE_URL + "products/"
+			);
+			setHeadphone(headphone.data);
+			setAirConditioner(airConditioner.data);
+			setTelevision(television.data);
+			setRouter(router.data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
-		<>
-		<Navbar />
-		<div className={style.background}>
-			<div className={style.content}>
-				<div className="row">
-					<div className="col">
-						<div className={style.text1}>Take Your Time</div>
-						<div className={style.text1}>And Shop</div>
-						<div className={style.text1}>Anywhere</div>
-						<div className={style.text2}>
-							Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-							amet sint. Velit officia consequat duis enim velit mollit..
-						</div>
+		<div className="App">
+		<Header />
+			<div className="row home-banner">
+				<div className="col-lg-6 home-banner-left">
+					<div className="home-banner-title">
+							Take Your Time
 						<br />
-						<div className={style.button}>
-							<Button href="/" type="button" className="btn btn-primary me-md-2">
-								Shop Now
-							</Button>
-							<Button href="/" type="button" className={style.buttonseller}>
-								Be a Seller
-							</Button>
-						</div>
+							And<span className="blueblue"> Shop</span>
+						<br />
+							Anywhere
 					</div>
-					<div className="col">
-						<img
-							width="684px"
-							height="456px"
-							className={style.logo}
-							src={background}
-							alt="background"/>
+					<div className="home-banner-desc">
+						Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+						sint. Velit officia consequat duis enim velit mollit..
+					</div>
+					<div className="row mt-4">
+						<button type="button" className="home-button-shop">
+							Shop Now
+						</button>
+						<button type="button" className="home-button-seller">
+							Be a Seller
+						</button>
 					</div>
 				</div>
+				<div className="col-lg-6 home-banner-right">
+					<img src={homebanner} alt="" />
+				</div>
 			</div>
-		</div>
-
-		<div className="container">
-			<div>
-				<Card
-					bg={'light'}
-					style={{ width: '147px', height: '52px' }}
-					className={style.cardChild} >
-					<Card.Title className={style.title3}>How it Works</Card.Title>
-				</Card>
-			</div>
-			<div className={style.text3}>Make An</div>
-			<div className={style.text3}>Order Easily</div>
-			<div className={style.cardContent}>
-				<Card className={style.card}>
-					<div className={style.imgContent}>
-						<Card.Img className={style.img} variant="top" src={logo} />
+			<div className="container">
+				<div className="row row-badge">
+					<button type="button" className="home-badge">
+						How it Works
+					</button>
+				</div>
+					<div className="row home-title text-center">
+						Make An
+					<br />
+						Order Easily
 					</div>
-					<Card.Body className={style.cardBody}>
-					<Card.Title className={style.title}>Select Product</Card.Title>
-					<Card.Text className={style.isi}>
+				<div className="row">
+				<div className="col-xl-4 col-lg-6">
+					<div className="home-card">
+					<button className="home-card-icon">
+						<BsBag className="home-bs-icon" />
+					</button>
+					<div className="home-card-title">Select Product</div>
+					<div className="home-card-desc">
 						Amet minim mollit non deserunt ullamco est sit aliqua dolor do
 						amet sint. Velit officia consequat duis enim velit mollit.
 						Exercitation veniam consequat sunt nostrud amet.
-					</Card.Text>
-					</Card.Body>
-				</Card>
-				<Card className={style.card2}>
-					<div className={style.imgContent}>
-						<Card.Img className={style.img} variant="top" src={coin} />
 					</div>
-					<Card.Body className={style.cardBody}>
-					<Card.Title className={style.title2}>Make Payment</Card.Title>
-					<Card.Text className={style.isi2}>
+					</div>
+				</div>
+				<div className="col-xl-4 col-lg-6">
+					<div className="home-card">
+					<button className="home-card-icon">
+						<BsCashCoin className="home-bs-icon" />
+					</button>
+					<div className="home-card-title">Make Payment</div>
+					<div className="home-card-desc">
 						Amet minim mollit non deserunt ullamco est sit aliqua dolor do
 						amet sint. Velit officia consequat duis enim velit mollit.
 						Exercitation veniam consequat sunt nostrud amet.
-					</Card.Text>
-					</Card.Body>
-				</Card>
-				<Card className={style.card2}>
-					<div className={style.imgParent}>
-						<Card.Img className={style.img} variant="top" src={box} />
 					</div>
-					<Card.Body className={style.cardBody}>
-					<Card.Title className={style.title2}>Receive Product</Card.Title>
-					<Card.Text className={style.isi2}>
+					</div>
+				</div>
+				<div className="col-xl-4 col-lg-6">
+					<div className="home-card">
+					<button className="home-card-icon">
+						<BsBox className="home-bs-icon" />
+					</button>
+					<div className="home-card-title">Receive Product</div>
+					<div className="home-card-desc">
 						Amet minim mollit non deserunt ullamco est sit aliqua dolor do
 						amet sint. Velit officia consequat duis enim velit mollit.
 						Exercitation veniam consequat sunt nostrud amet.
-					</Card.Text>
-					</Card.Body>
-				</Card>
-			</div>
-		</div>
+					</div>
+					</div>
+				</div>
+				</div>
 
-		<div className="container">
-			<div>
-			<Card
-				bg={'light'}
-				style={{ width: '147px', height: '52px' }}
-				className={style.cardChild}
-			>
-				<Card.Title className={style.title3}>Our Product</Card.Title>
-			</Card>
-			</div>
-			<div className={style.text3}>The Best Product By</div>
-			<div className={style.text3}>Lectronic</div>
-			<Navcard />
-		</div>
-		<Container>
-			<Cards />
-		</Container>
-		<div>
-			<Button href="/products" className={style.button2} variant="primary">
-				View All
-			</Button>
-		</div>
+				<div className="row">
+				<button type="button" className="home-badge">
+					Our Product
+				</button>
+				</div>
 
-		<Card.Img className={style.img2} variant="top" src={img} />
-		<div className={style.promo}>
-			<div className={style.textpromo}>Get 30% off of</div>
-			<div className={style.textpromo}>Your First</div>
-			<div className={style.textpromo}>Purchases</div>
-			<p className={style.textemail}>
-			Enter your Email Below To Receive The Discount Code
-			</p>
-			<div className={style.email_sub}>
-			<Form.Control
-				className={style.form}
-				type="email"
-				placeholder="Enter Your Email"
-			/>
-			<Button href="login" className={style.btnemail} variant="primary">
-				Submit
-			</Button>
+				<div className="row home-title text-center">
+					The Best Product
+				<br />
+					By Lectronic
+				</div>
+				<div className="row mb-5">
+				<div className="col-lg-6">
+					<ul className="nav nav-pills" id="pills-tab" role="tablist">
+					<li className="nav-item" role="presentation">
+						<button
+						className="nav-link active"
+						id="pills-home-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-home"
+						type="button"
+						role="tab"
+						aria-controls="pills-home"
+						aria-selected="true"
+						>
+						Headphone
+						</button>
+					</li>
+					<li className="nav-item" role="presentation">
+						<button
+						className="nav-link"
+						id="pills-profile-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-profile"
+						type="button"
+						role="tab"
+						aria-controls="pills-profile"
+						aria-selected="false"
+						>
+						Air Conditioner
+						</button>
+					</li>
+					<li className="nav-item" role="presentation">
+						<button
+						className="nav-link"
+						id="pills-contact-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-contact"
+						type="button"
+						role="tab"
+						aria-controls="pills-contact"
+						aria-selected="false"
+						>
+						Television
+						</button>
+					</li>
+					<li className="nav-item" role="presentation">
+						<button
+						className="nav-link"
+						id="pills-disabled-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-disabled"
+						type="button"
+						role="tab"
+						aria-controls="pills-disabled"
+						aria-selected="false"
+						>
+						Router
+						</button>
+					</li>
+					</ul>
+				</div>
+				<div className="col-lg-6">
+					<div className="input-group mb-3">
+					<input
+						type="text"
+						onChange={(event) => {
+						setSearchTerm(event.target.value);
+						}}
+						className="form-control"
+						placeholder="Search"
+						aria-label="Username"
+						aria-describedby="basic-addon1"
+					></input>
+					<span className="input-group-text" id="basic-addon1">
+						<BsSearch />
+					</span>
+					</div>
+				</div>
+				</div>
+				<div className="tab-content" id="pills-tabContent">
+				<div
+					className="tab-pane fade show active"
+					id="pills-home"
+					role="tabpanel"
+					aria-labelledby="pills-home-tab"
+					tabindex="0"
+					>
+					<div className="row">
+					{headphone
+						.filter((v) => {
+						if (searchTerm == "") {
+							return v;
+						} else if (
+							v.name.toLowerCase().includes(searchTerm.toLowerCase())
+						) {
+							return v;
+						}
+						})
+						.map((v, k) => {
+						if (k < 6) {
+							return (
+							<div className="col-xl-4 col-lg-6 col-sm-12">
+								<CardOriginal
+								id={v.id}
+								name={v.name}
+								price={v.price}
+								rate={v.rating}
+								image={v.image}
+								/>
+							</div>
+							);
+						}
+						})}
+					</div>
+				</div>
+				<div
+					className="tab-pane fade"
+					id="pills-profile"
+					role="tabpanel"
+					aria-labelledby="pills-profile-tab"
+					tabindex="0"
+					>
+					<div className="row">
+					{airConditioner
+						.filter((v) => {
+						if (searchTerm == "") {
+							return v;
+						} else if (
+							v.name.toLowerCase().includes(searchTerm.toLowerCase())
+						) {
+							return v;
+						}
+						})
+						.map((v, k) => {
+						if (k < 6) {
+							return (
+							<div className="col-xl-4 col-lg-6 col-sm-12">
+								<CardOriginal
+								id={v.id}
+								name={v.name}
+								price={v.price}
+								rate={v.rating}
+								image={v.image}
+								/>
+							</div>
+							);
+						}
+						})}
+					</div>
+				</div>
+				<div
+					className="tab-pane fade"
+					id="pills-contact"
+					role="tabpanel"
+					aria-labelledby="pills-contact-tab"
+					tabindex="0"
+					>
+					<div className="row">
+					{television
+						.filter((v) => {
+						if (searchTerm == "") {
+							return v;
+						} else if (
+							v.name.toLowerCase().includes(searchTerm.toLowerCase())
+						) {
+							return v;
+						}
+						})
+						.map((v, k) => {
+						if (k < 6) {
+							return (
+							<div className="col-xl-4 col-lg-6 col-sm-12">
+								<CardOriginal
+								id={v.id}
+								name={v.name}
+								price={v.price}
+								rate={v.rating}
+								image={v.image}
+								/>
+							</div>
+							);
+						}
+						})}
+					</div>
+				</div>
+				<div
+					className="tab-pane fade"
+					id="pills-disabled"
+					role="tabpanel"
+					aria-labelledby="pills-disabled-tab"
+					tabindex="0"
+					>
+					<div className="row">
+					{router
+						.filter((v) => {
+						if (searchTerm == "") {
+							return v;
+						} else if (
+							v.name.toLowerCase().includes(searchTerm.toLowerCase())
+						) {
+							return v;
+						}
+						})
+						.map((v, k) => {
+						if (k < 6) {
+							return (
+							<div className="col-xl-4 col-lg-6 col-sm-12">
+								<CardOriginal
+								id={v.id}
+								name={v.name}
+								price={v.price}
+								rate={v.rating}
+								image={v.image}
+								/>
+							</div>
+							);
+						}
+						})}
+					</div>
+				</div>
+				</div>
+
+				<div className="row">
+				<button onClick={viewAll} type="button" className="home-button">
+					View all
+				</button>
+				</div>
+				<div className="row">
+				<img src={subscribe} alt="" />
+				</div>
 			</div>
-		</div>
 		<Footer />
-		</>
+		</div>
 	);
 }
 
