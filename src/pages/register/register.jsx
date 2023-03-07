@@ -31,10 +31,10 @@ function Register() {
 				method: "POST",
 				url: "/users/register",
 				data: {
-				name: name,
-				username: username,
-				email: email,
-				password: password,
+                    name: name,
+                    username: username,
+                    email: email,
+                    password: password,
 				},
 			})
 			.then((res) => {

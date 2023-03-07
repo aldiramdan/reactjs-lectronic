@@ -91,12 +91,15 @@ function Profile() {
 			.req({
 				method: "PUT",
 				url: "/users/profile/edit",
+				headers: {
+                    "Content-Type": "multipart/form-data",
+                },
 				data: {
 					name: name1,
-					date: birthdate,
+					date_of_birth: birthdate,
 					address: address,
 					gender: gender,
-					phone: parseInt(phone),
+					mobile_number: parseInt(phone),
 				},
 			})
 			.then((res) => {
@@ -322,12 +325,12 @@ function Profile() {
 			<Row style={{ marginLeft: "11.8vmin" }}>
 			<Button
 				style={{
-				padding: "10px",
-				minWidth: "100px",
-				width: "15%",
-				borderRadius: "10px",
-				border: "none",
-				fontWeight: "bold",
+					padding: "10px",
+					minWidth: "100px",
+					width: "15%",
+					borderRadius: "10px",
+					border: "none",
+					fontWeight: "bold",
 				}}
 				className="fazhvrsubmit"
 				onClick={updateData}

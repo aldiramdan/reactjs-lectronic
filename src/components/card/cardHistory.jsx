@@ -17,12 +17,12 @@ function CardHistory(props) {
 				<div className="card-history-image-bg mr-2">
 					<img className="card-history-image" src={props.image} alt="image" />
 				</div>
-				<div className="left-detail">
-					<span className="badge card-history-type">{props.category}</span>
+				<div className="left-detail">		
 					<div className="row">
-					<div className="card-history-title">{props.name}</div>
-					<div className="card-history-price">1 item | ${props.price}</div>
+						<div className="card-history-title">{props.name}</div>
+						<div className="card-history-price">1 item | ${props.price}</div>
 					</div>
+						<span className="badge card-history-type">{props.category}</span>
 				</div>
 				</div>
 				<div className="col-lg-6 mt-auto">

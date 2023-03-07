@@ -66,7 +66,7 @@ function History() {
 						id={v.product_id}
 						name={v.product.name}
 						price={v.product.price}
-						type={v.product.type}
+						category={v.product.category}
 						image={v.product.image}
 						total={v.product.price}
 					/>
