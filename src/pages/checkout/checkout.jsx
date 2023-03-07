@@ -21,7 +21,7 @@ function Checkout() {
 		api
 		.req({
 			method: "POST",
-			url: "/cart/",
+			url: "/carts/",
 			data: order,
 		})
 		.then((res) => {
@@ -42,8 +42,8 @@ function Checkout() {
 			const { data } = res.data;
 			setOrder(data);
 			setData(data);
-			order.product_id = parseInt(params.id);
-			data.product_id = parseInt(params.id);
+			order.product_id = params.id;
+			data.product_id = params.id;
 		})
 		.catch((err) => {
 			console.log(err);

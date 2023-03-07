@@ -17,11 +17,11 @@ function History() {
 		api
 		.req({
 			method: "GET",
-			url: `/cart/`,
+			url: `/carts/carts-list`,
 		})
 		.then((res) => {
 			const { data } = res.data;
-			setHistory(data);
+			setHistory(data);	
 		})
 		.catch((err) => {
 			console.log(err);
@@ -32,9 +32,12 @@ function History() {
 		getHistory();
 	}, []);
 
+	if (!history) {
+		return <div>Loading...</div>
+	}
+
 	return (
 		<div className="App">
-		{console.log(history)}
 		<Header />
 		<InputGroup className={style.parent}>
 			<FormControl
@@ -54,52 +57,52 @@ function History() {
 		</InputGroup>
 		<div className="container">
 			<div className="row">
-			<div className="history-title">Shopping History</div>
+				<div className="history-title">Shopping History</div>
 			</div>
 			<div className="row mb-5 mt-5">
-			{history.map((v, k) => {
-				return (
-				<CardHistory
-					id={v.id}
-					name={v.Products.name}
-					price={v.Products.price}
-					type={v.Products.type}
-					image={v.Products.image}
-					total={v.Products.price}
-				/>
-				);
-			})}
+				{history.map((v, k) => {
+					return (
+					<CardHistory
+						id={v.product_id}
+						name={v.product.name}
+						price={v.product.price}
+						type={v.product.type}
+						image={v.product.image}
+						total={v.product.price}
+					/>
+					);
+				})}
 			</div>
 			<div className="row">
-			<nav aria-label="Page navigation example">
-				<ul class="pagination justify-content-center">
-				<li class="page-item">
-					<a class="page-link" href="#" aria-label="Previous">
-					<span aria-hidden="true">&laquo;</span>
-					</a>
-				</li>
-				<li class="page-item active">
-					<a class="page-link" href="#">
-					1
-					</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="#">
-					2
-					</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="#">
-					3
-					</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="#" aria-label="Next">
-					<span aria-hidden="true">&raquo;</span>
-					</a>
-				</li>
-				</ul>
-			</nav>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li class="page-item active">
+						<a class="page-link" href="#">
+						1
+						</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">
+						2
+						</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">
+						3
+						</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 		<Footer />
