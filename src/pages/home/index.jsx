@@ -36,7 +36,7 @@ function Home() {
 
 	const getUser = async () => {
 		try {
-			const { data } = await api.req("/users/");
+			const { data } = await api.req("/users/profile");
 			dispatch(addUsers(data.data));
 		} catch (error) {
 			logOut();
