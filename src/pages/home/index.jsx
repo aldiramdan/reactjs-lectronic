@@ -54,16 +54,16 @@ function Home() {
 	const getProducts = async () => {
 		try {
 			const { data: headphone } = await axios.get(
-				process.env.REACT_APP_BASE_URL + "products/"
+				process.env.REACT_APP_BASE_URL + "products/search/?s=handphone"
 			);
 			const { data: airConditioner } = await axios.get(
-				process.env.REACT_APP_BASE_URL + "products/"
+				process.env.REACT_APP_BASE_URL + "products/search/?s=airconditioner"
 			);
 			const { data: television } = await axios.get(
-				process.env.REACT_APP_BASE_URL + "products/"
+				process.env.REACT_APP_BASE_URL + "products/search/?s=television"
 			);
 			const { data: router } = await axios.get(
-				process.env.REACT_APP_BASE_URL + "products/"
+				process.env.REACT_APP_BASE_URL + "products/search/?s=router"
 			);
 			setHeadphone(headphone.data);
 			setAirConditioner(airConditioner.data);
