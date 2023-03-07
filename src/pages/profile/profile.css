@@ -1,0 +1,116 @@
+#up {
+  z-index: -1;
+}
+
+.fazr2 {
+  margin: 10vmin;
+  width: 50%;
+}
+
+.fazprof1 {
+  height: 20rem;
+  margin: 10px;
+  background-color: #d6d4d4;
+  border-radius: 10px;
+  position: relative;
+}
+
+.fazprof2 {
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 3rem;
+  height: 3rem;
+  background-color: #0300ad1a;
+  position: relative;
+  border-radius: 10px;
+}
+
+.fazprof3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.fazprof4 {
+  width: 150px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.fazprof5 {
+  max-width: 8rem;
+  position: absolute;
+  right: 6vmin;
+  bottom: -6.5vmin;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 25px;
+  width: 12px;
+  height: 12px;
+  background: url("./img/calendar.png");
+  background-size: 100% 100%;
+}
+
+input {
+  position: relative;
+}
+
+input[type="date"]:before {
+  content: attr(placeholder);
+  color: #777777;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  display: none;
+}
+
+.fazbtn {
+  display: flex;
+  background-color: white;
+  width: 24rem;
+  height: 2.3rem;
+  border-radius: 10px;
+  gap: 5px;
+}
+
+.fazbtn {
+  text-align: center;
+  width: 12rem;
+  border-radius: 10px;
+}
+
+.fazbackground {
+  background-color: #415fe7;
+}
+
+.fazwhite {
+  margin-left: 9px;
+  color: white;
+  font-size: small;
+}
+
+.fazcss2 {
+  margin-left: 9px;
+  font-size: small;
+}
+
+.fazcss {
+  margin-top: 8px;
+}
+
+.fazhvrsubmit:hover {
+  background-color: #0020b2;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
