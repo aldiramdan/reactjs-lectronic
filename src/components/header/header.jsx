@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navbar, Container, Nav, Button, Dropdown } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../../store/reducer/user'
 import Logo from './logoHeader.png'
 import BackLogo from './back.png'
@@ -12,6 +12,11 @@ import style from './header.module.css'
 function Header() {
 	const dispatch = useDispatch()
 	const { isAuth } = useSelector((state) => state.users)
+	const history = useNavigate()
+
+	const handleHistory = ()=>{
+		history(-1)
+	}
 
 	return (
 		<>
