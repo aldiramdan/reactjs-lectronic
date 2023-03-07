@@ -31,62 +31,61 @@ function CardAdmin(props) {
     const { token } = useSelector((state) => state.users);
 
     const onChangeInput = (event) => {
-      event.preventDefault();
+		event.preventDefault();
 
-      const tmpdata = { ...data };
-      tmpdata[event.target.name] = event.target.value;
-      setData(tmpdata);
+		const tmpdata = { ...data };
+		tmpdata[event.target.name] = event.target.value;
+		setData(tmpdata);
     };
 
     const onChangeFile = (event) => {
-      event.preventDefault();
+		event.preventDefault();
 
-      const file = event.target.files[0];
-      if (file) {
-        const tmpdata = { ...data };
-        tmpdata["image"] = file;
-        setData(tmpdata);
-      }
+		const file = event.target.files[0];
+		if (file) {
+			const tmpdata = { ...data };
+			tmpdata["image"] = file;
+			setData(tmpdata);
+		}
     };
 
     const getProducts = () => {
-      api
-        .req({
-          method: "GET",
-          url: `/products/` + props.id,
-        })
-        .then((res) => {
-          const { data } = res.data;
-          setProduct(data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+		api
+			.req({
+				method: "GET",
+				url: `/products/` + props.id,
+			})
+			.then((res) => {
+			const { data } = res.data;
+				setProduct(data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
     };
 
     const postData = async () => {
-      const formData = new FormData();
-      for (const key in data) {
-        formData.append(`${key}`, data[key]);
-      }
-
-      axios({
-        method: "POST",
-        url: "/products/",
-        headers: {
-			Authorization: `Bearer ${token}`,
-			"Content-Type": "multipart/form-data",
-        },
-        data: formData,
-      })
-        .then((res) => {
-          navigate("/products");
-        })
-        .catch((err) => {
-          console.log(data);
-          alert(err);
-        });
-    };
+		const formData = new FormData();
+		for (const key in data) {
+			formData.append(`${key}`, data[key]);
+      	}
+		api
+			.req({
+				method: "PUT",
+				url: `/products/` + props.id,
+				headers: {
+					"Content-Type": "multipart/form-data",
+				},
+				data: formData,
+			})
+			.then((res) => {
+				window.location.reload(navigate("/products"));
+			})
+			.catch((err) => {
+				console.log(data);
+				alert(err);
+			});
+	};
 
     useEffect(() => {
       getProducts();
@@ -100,11 +99,11 @@ function CardAdmin(props) {
 					<img className="card-admin-image" src={props.image} alt="image" />
 				</div>
 				<div className="left-detail">
-					<span className="badge card-admin-type">{props.category}</span>
 				<div className="row">
 					<div className="card-admin-title">{props.name}</div>
 					<div className="card-admin-price">${props.price}</div>
 				</div>
+				<span className="badge card-admin-type">{props.category}</span>
 				</div>
 			</div>
 			<div className="col-lg-6 mt-auto">
@@ -120,8 +119,8 @@ function CardAdmin(props) {
 				<button
 					onClick={() => {
 					if (window.confirm("Are you sure to delete this vehicle?")) {
-						deleteProduct();
-					}
+							deleteProduct();
+						}
 					}}
 					type="button"
 					class="card-admin-button-trash"
@@ -132,11 +131,11 @@ function CardAdmin(props) {
 			</div>
 			</div>
 			<div
-			class="modal fade"
-			id="editModal"
-			tabindex="-1"
-			aria-labelledby="editModalLabel"
-			aria-hidden="true"
+				class="modal fade"
+				id="editModal"
+				tabindex="-1"
+				aria-labelledby="editModalLabel"
+				aria-hidden="true"
 			>
 			<div class="modal-dialog modal-xl">
 				<div class="modal-content modal-contents">
@@ -152,7 +151,7 @@ function CardAdmin(props) {
 						<input
 							name="name"
 							type="text"
-							defaultValue={data.name}
+							defaultValue={product.name}
 							class="form-control form-control-lg mb-3 modal-forms"
 							placeholder="Input name product..."
 							onChange={onChangeInput}
@@ -163,7 +162,7 @@ function CardAdmin(props) {
 						<input
 							name="price"
 							type="number"
-							defaultValue={data.price}
+							defaultValue={product.price}
 							class="form-control form-control-lg mb-3 modal-forms"
 							placeholder="Input price product..."
 							onChange={onChangeInput}
@@ -176,7 +175,7 @@ function CardAdmin(props) {
 						<input
 							name="stock"
 							type="number"
-							defaultValue={data.stock}
+							defaultValue={product.stock}
 							class="form-control form-control-lg mb-3 modal-forms"
 							placeholder="Input stock product..."
 							onChange={onChangeInput}
@@ -188,7 +187,7 @@ function CardAdmin(props) {
 						<input
 							name="description"
 							type="text"
-							defaultValue={data.description}
+							defaultValue={product.description}
 							class="form-control form-control-lg mb-3 modal-forms"
 							placeholder="Input description product..."
 							onChange={onChangeInput}
@@ -200,13 +199,13 @@ function CardAdmin(props) {
 					<div className="col-lg-6">
 						<label class="form-label form-labels">Category</label>
 						<select
-							name="type"
+							name="category"
 							className="form-select modal-forms"
-							defaultValue={data.category}
+							defaultValue={product.category}
 							onChange={onChangeInput}
 						>
 							<option value="" selected disabled hidden>
-								{data.category}
+								{product.category}
 							</option>
 							<option value="Headphone">Headphone</option>
 							<option value="Air Conditioner">Air Conditioner</option>

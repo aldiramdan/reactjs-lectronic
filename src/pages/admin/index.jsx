@@ -45,6 +45,11 @@ function Admin() {
 		getProducts();
 	}, []);
 
+	if (!product) {
+		return <div>Loading....</div>
+	}
+
+
 	return (
 		<div className="App">
 		<Header />
