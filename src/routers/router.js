@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/home";
-import Product from "../pages/product";
-import Register from "../pages/register";
-import Login from "../pages/login";
+import Product from "../pages/product/product";
+import Register from "../pages/signup/register";
+import Login from "../pages/login/login";
 import Profile from "../pages/profile";
 import Cart from "../pages/cart/cart";
-import DetailProduct from "../pages/product/detail";
+import DetailProduct from "../pages/product/productDetail";
 import Checkout from "../pages/checkout/checkout";
 import History from "../pages/history";
 import Admin from "../pages/admin";
