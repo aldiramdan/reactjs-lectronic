@@ -9,6 +9,7 @@ import Cart from "../pages/cart/cart";
 import DetailProduct from "../pages/product/productDetail";
 import Checkout from "../pages/checkout/checkout";
 import History from "../pages/history";
+import Admin from "../pages/admin";
 
 function Routers() {
 	return (
@@ -23,6 +24,7 @@ function Routers() {
 				<Route exact path="/cart/:id" element={<Cart />} />
 				<Route exact path="/checkout/:id" element={<Checkout />} />
 				<Route exact path="/history" element={<History />} />
+				<Route exact path="/admin" element={<Admin />} />
 			</Routes>
 		</BrowserRouter>
 	);
