@@ -26,6 +26,8 @@ function Header() {
 				<>
 				<Navbar.Brand href="/">
 					<img
+						width="200"
+						height="auto"
 						className="d-inline-block align-top"
 						src={Logo}
 						alt="logo"
@@ -67,7 +69,7 @@ function Header() {
 			<Navbar className={style.navbar} variant="light">
 				<Container>
 					<Navbar.Brand href="/">
-						<Button className={style.but_back}>
+						<Button onClick={handleHistory} className={style.but_back}>
 							<img src={BackLogo} alt="" />
 						</Button>
 					</Navbar.Brand>
