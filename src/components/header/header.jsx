@@ -91,7 +91,7 @@ function Header() {
 									width="45px"
 								/>
 							</div>
-							<Dropdown.Item href="/cart">Cart</Dropdown.Item>
+							<Dropdown.Item href="/admin">Dashbord</Dropdown.Item>
 							<Dropdown.Item href="/history">History</Dropdown.Item>
 							<Dropdown.Item href="/profile">Profile</Dropdown.Item>
 							<Dropdown.Item onClick={() => dispatch(logout())}>
