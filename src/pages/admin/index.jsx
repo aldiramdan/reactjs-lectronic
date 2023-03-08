@@ -22,7 +22,7 @@ function Admin() {
 	useEffect(() => {
 		console.log(data);
 		if (data.role !== "admin") {
-		navigate("/");
+			navigate("/");
 		}
 	});
 

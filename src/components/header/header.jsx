@@ -94,7 +94,7 @@ function Header() {
 							<Dropdown.Item href="/admin">Dashbord</Dropdown.Item>
 							<Dropdown.Item href="/history">History</Dropdown.Item>
 							<Dropdown.Item href="/profile">Profile</Dropdown.Item>
-							<Dropdown.Item onClick={() => dispatch(logout())}>
+							<Dropdown.Item onClick={() => dispatch(logout(history("/")))}>
 								Logout
 							</Dropdown.Item>
 						</Dropdown.Menu>
