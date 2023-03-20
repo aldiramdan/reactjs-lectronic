@@ -1,0 +1,44 @@
+.modal-title {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.form-labels {
+  font-size: 22px;
+  font-weight: 700;
+}
+.modal-forms {
+  height: 100px;
+  color: #777;
+  border-radius: 20px;
+}
+
+.modal-contents {
+  border-radius: 20px;
+  padding: 33px 57px 57px 57px;
+}
+
+.modal-button-submit {
+  color: #fff;
+  background: #0020b2;
+  border-radius: 20px;
+  padding: 19px 65px;
+  box-shadow: 5px 4px 50px rgba(3, 0, 173, 0.2);
+}
+
+.modal-add-button {
+  background: #0300ad;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+.modal-edit-button {
+  background: #0300ad;
+  color: #fff;
+  width: 138px;
+  height: 57px;
+  border-radius: 10px;
+}
